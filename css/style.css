@@ -1,0 +1,183 @@
+/*Your Code Here*/
+
+/* Navigation links on hover or focus */
+
+/* Navigation links on hover or focus */
+nav a:hover,
+nav a:focus {
+  border: 2px dotted purple;
+}
+
+/* Default position for the skip link */
+.skip {
+  position: relative;
+}
+
+.skip a {
+  position: absolute;
+  top: -65px;
+  left: 0;
+  background: white;
+  padding: 6px;
+  z-index: 1000;
+  transition: top 1s ease-out;
+}
+
+/* Show the skip link when focused */
+.skip a:focus {
+  top: 25px;
+}
+
+/* Focus styling for all elements */
+*:focus {
+  border: 5px dashed green;
+}
+
+/* Preserve the required navigation border */
+nav a:hover,
+nav a:focus {
+  border: 2px dotted purple;
+}
+
+/* Mobile grid: five equal columns */
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 13px;
+}
+
+/* First child: overview with background image */
+.container > :first-child {
+  grid-column: 1 / -1;
+  background-image: url("../images/header.jpg");
+}
+
+/* Mobile: position all five text blocks */
+.accounts,
+.onlinebanking,
+.security,
+.loans,
+.contact {
+  grid-column: 2 / span 3;
+}
+
+.accounts {
+  grid-row: 2;
+}
+
+.onlinebanking {
+  grid-row: 3;
+}
+
+.security {
+  grid-row: 4;
+}
+
+.loans {
+  grid-row: 5;
+}
+
+.contact {
+  grid-row: 6;
+}
+
+/* Mobile: position all five image containers */
+.accounts-image,
+.onlinebanking-image,
+.security-image,
+.loans-image,
+.contact-image {
+  grid-column: 1 / -1;
+}
+
+.accounts-image {
+  grid-row: 2;
+}
+
+.onlinebanking-image {
+  grid-row: 3;
+}
+
+.security-image {
+  grid-row: 4;
+}
+
+.loans-image {
+  grid-row: 5;
+}
+
+.contact-image {
+  grid-row: 6;
+}
+
+/* Make the images fit their containers */
+.accounts-image img,
+.onlinebanking-image img,
+.security-image img,
+.loans-image img,
+.contact-image img {
+  display: block;
+  width: 100%;
+  max-height: 675px;
+  object-fit: cover;
+}
+
+/* Center text blocks */
+.text-block {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+/* Keep lists left-aligned */
+.text-block ul {
+  text-align: left;
+  justify-self: center;
+}
+
+/* Desktop view: 825px and wider */
+@media screen and (min-width: 825px) {
+
+  /* Step 10: Navigation */
+  nav {
+    text-align: right;
+    padding: 35px 0;
+  }
+
+  /* Step 11: Seven-column grid */
+  .container {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  /* Steps 12–13: Text block positions */
+  .accounts,
+  .security,
+  .contact {
+    grid-column: 4 / span 3;
+  }
+
+  .onlinebanking,
+  .loans {
+    grid-column: 2 / span 3;
+  }
+
+  /* Steps 14–15: Image positions */
+  .accounts-image,
+  .security-image,
+  .contact-image {
+    grid-column: 1 / span 5;
+  }
+
+  .onlinebanking-image,
+  .loans-image {
+    grid-column: 3 / span 5;
+  }
+
+  /* Step 16: Text panel height and overflow */
+  .text-block {
+    max-height: 235px;
+    overflow: auto;
+  }
+}
+
